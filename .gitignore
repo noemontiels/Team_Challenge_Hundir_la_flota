@@ -1,0 +1,29 @@
+# Python notebook checkpoint
+.ipynb_checkpoints
+__pycache__
+
+# Environment variables
+.env
+
+# Editor
+.vscode/
+.idea/
+
+# Logs and databases
+logs
+*.log
+*.sqlite
+*.sqlite3
+*.db
+*.sql
+
+# Build output
+/build/
+/dist/
+/out/
+/public/
+/build-output/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
