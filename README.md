@@ -33,21 +33,45 @@ En cada turno, los jugadores se alternan para disparar al tablero del oponente. 
 - Tener instalado Numpy
 
 ## El tablero<a name="id3"></a>
-El tablero consta de 10 columnas y 10 filas (1 - 10).
+El tablero consta de 10 columnas y 10 filas (1 - 10). Cada jugador dispondrá de 2 tableros: el suyo, donde ve los barcos; y un tablero en blanco (el del contrincante) donde irá viendo dónde ha disparado, y si ha acertado el disparo o no. Aquí tienes un ejemplo de los tableros antes de empezar el juego:
 
-                    1 2 3 4 5 6 7 8 9 10
-                    -------------------
-                 1 |1                  |
-                 2 |          2 2      |
-                 3 |            1   2  |
-                 4 |                2  |
-                 5 |                   |
-                 6 |                   |
-                 7 |    3 3 3     4    |
-                 8 |  3 3 3   1   4    |
-                 9 |              4    |
-                10 |  2 2         4   1|
-                    -------------------
+                                   MI TABLERO:                                      TABLERO OPONENTE:
+                                    
+                                1 2 3 4 5 6 7 8 9 10                               1 2 3 4 5 6 7 8 9 10
+                               ---------------------                               ---------------------
+                             1 |    0 0 0 0        |                             1 |                   |
+                             2 |              0 0  |                             2 |                   |
+                             3 |   0               |                             3 |                   |
+                             4 |         0 0       |                             4 |                   |
+                             5 |                0  |                             5 |                   | 
+                             6 |         0   0  0  |                             6 |                   |
+                             7 |   0 0       0  0  |                             7 |                   |
+                             8 |             0     |                             8 |                   |
+                             9 |                   |                             9 |                   |
+                            10 |       0     0     |                            10 |                   |
+                               ---------------------                               ---------------------
+                                      
+Los '0' en el tablero representan los barcos.
+Cuando se dispara, si se impacta en un barco enemigo, se marcará con una "X" en el tablero. Si el disparo cae en el agua, se marcará con un guión "-".
+
+Según vaya avanzando la partida, los tableros se irán viendo de la siguiente manera: 
+
+                                   MI TABLERO:                                      TABLERO OPONENTE:
+                                    
+                                1 2 3 4 5 6 7 8 9 10                               1 2 3 4 5 6 7 8 9 10
+                               ---------------------                               ---------------------
+                             1 |    0 0 0 X -      |                             1 |        X X        |
+                             2 |      - -     0 0  |                             2 |                   |
+                             3 |   0               |                             3 |        - X X X -  |
+                             4 |         0 X       |                             4 |                   |
+                             5 |                0  |                             5 |    -              | 
+                             6 |       - 0   X  0  |                             6 |         X         |
+                             7 |   X X       X  0  |                             7 |                   |
+                             8 |             0     |                             8 |            X      |
+                             9 |- -                |                             9 |          - X      |
+                            10 |       0     0     |                            10 |                   |
+                               ---------------------                               ---------------------
+
 
 ## Cómo jugar<a name="id4"></a>
 1. Al iniciar el juego, se te pedirá que introduzcas tu nombre.
