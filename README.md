@@ -35,8 +35,9 @@ En cada turno, los jugadores se alternan para disparar al tablero del oponente. 
 1. Al iniciar el juego, se te pedirá que introduzcas tu nombre.
 2. Los tableros de ambos jugadores se inicializan automáticamente con los barcos colocados aleatoriamente.
 3. En tu turno, introduce las coordenadas para disparar en el formato 'x y'.
-4. El juego continuará hasta que uno de los jugadores haya hundido todos los barcos del oponente.
-5. Puedes salir del juego con el comando 'exit'.
+4. Si tu disparo ha impactado en un barco del oponente, te vuelve a tocar; si no, el turno pasa a tu contrincante.
+5. El juego continuará hasta que uno de los jugadores haya hundido todos los barcos del oponente.
+6. Puedes salir del juego con el comando 'exit'.
 
 ## Estructura del código<a name="id4"></a>
 - **'main.py'**: controla el flujo principal del juego.
