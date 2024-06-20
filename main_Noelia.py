@@ -10,7 +10,7 @@ def main():
     variables.PLAYER_ID = funciones.player_name()
 
     # Inicializar los tableros
-    PLAYER_BOARD = board(PLAYER_ID)
+    PLAYER_BOARD = clases.Board(Player_ID)
 
 # Variables de la partida
 pc_shots = []
