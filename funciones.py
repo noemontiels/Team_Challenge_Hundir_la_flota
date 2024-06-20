@@ -61,9 +61,10 @@ def get_shot_coordinates():
             coordinates.append(coordinate)
     return coordinates
 
+
 def generate_shot():
-    # Genera de forma aleatoria las coordenadas del disparo que realiza la máquina.
-    # FALTA ACTUALIZAR EL LISTADO DE DISPAROS REALIZADO POR LA MÁQUINA
+    # Genera de forma aleatoria las coordenadas del disparo que realiza la máquina, asegurando que el disparo está en el tablero y no se ha disparado antes a ese punto
+    # FALTA ACTUALIZAR EL LISTADO DE DISPAROS REALIZADO POR LA MÁQUINA + COMPROBAR SI EL DISPARO ALEATORIO YA ESTABA HECHO
     # main.pc_shots
     shot = np.random.randint(0, 9, (2,))
     return shot
