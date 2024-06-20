@@ -55,7 +55,7 @@ def get_shot_coordinates():
     for i in range(2):
         coordinate = int(float(input(f'{'Fila' if i == 0 else 'Columna'} del disparo (1-10): '))) - 1
         if coordinate > 9:
-            print('¡La coordenada introducida están fuera del tablero!')
+            print('¡La coordenada introducida está fuera del tablero!')
             return get_shot_coordinates()
         else:
             coordinates.append(coordinate)
