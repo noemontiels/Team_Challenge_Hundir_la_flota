@@ -1,7 +1,7 @@
 import numpy as np
 
 '''
-Constantes: se escriben en mayúsculas para diferenciarlas del resto de variables
+Constantes: se escriben en mayúsculas por ser variables que no cambian, para diferenciarlas del resto de variables que sí se modifican durante el juego
 - Id jugador
 - Id pc
 - Barcos: meterlos en un diccionario MIRAR NOMBRES DEL MENSAJE DE BIENVENIDA (funciones --> welcome())
@@ -11,7 +11,7 @@ Constantes: se escriben en mayúsculas para diferenciarlas del resto de variable
     1 de 4 posiciones de eslora
 - Array de tablero en blanco (dimensiones constantes)
 
-Variables: Esto iría en main.py porque van cambiando durante el juego
+Variables: Esto iría en main.py porque van cambiando durante el juego, sus nombres van en minúscula
 - Tableros (jugador + pc)
 - Registro de coordenadas de disparo (pc)
 - Vidas restantes (start = 20)
@@ -19,18 +19,25 @@ Variables: Esto iría en main.py porque van cambiando durante el juego
 
 # CONSTANTES
 
-# ID del jugador
-PLAYER_ID = input('Introduzca su nombre: ') # ESTO NO SÉ SI SERÍA ASÍ
+# ID del jugador, inicio con nombre predeterminado modificable por el jugador al inicio de la partida
+PLAYER_ID = 'human_player'
+
 # ID máquina
-PC_ID = 'player_pc'
+PC_ID = 'pc_player'
+
 # Dimensiones del tablero
-BOARD_DIMENSION = 10
+BOARD_SIZE = 10
+
 # Barcos
-BOATS = {                             
-    'A': ['A1'],
-    'B': ['B1', 'B2'],
-    'C': ['C1', 'C2', 'C3'],
-    'D': ['D1', 'D2', 'D3', 'D4']
+SHIPS = {
+    'A1': 4,
+    'B1': 3,
+    'B2': 3,
+    'C1': 2,
+    'C2': 2,
+    'C3': 2,
+    'D1': 1,
+    'D2': 1,
+    'D3': 1,
+    'D4': 1
 }
-# Tablero vacío
-EMPTY_BOARD = np.full((BOARD_DIMENSION, BOARD_DIMENSION), ' ')

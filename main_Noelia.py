@@ -21,8 +21,8 @@ def main():
 
     # Si PLAYER_ID es distinto de 'exit', se inicia el juego
     while variables.PLAYER_ID != 'exit':
-    print('Dentro de while')
-    break
+        print('Dentro de while')
+        break
     
     # Bucle principal del juego
     player_turn = True

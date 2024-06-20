@@ -1,7 +1,6 @@
 import numpy as np
 import random
 import variables
-import main
 
 '''
 - Colocar barco
@@ -19,7 +18,7 @@ import main
 '''
 
 def welcome():
-    # Imprime mensaje de bienvenida con las instrucciones del juego.
+    # Prints welcome message with game instructions.
     print(f'{'_'*100}\n\n¡Bienvenido a Battleship: Golden Hind Edition!\n\n' \
         'Cómo jugar:\n'\
         '   1. Introduzca su nombre de jugador para iniciar la partida.\n'\
@@ -36,24 +35,25 @@ def welcome():
 
 
 def player_name():
-    # Solicita el nombre del jugador.
+    # Requests the player's name. If none is provided, 'human_player' is asigned as default.
     return input('Introduzca su nombre: ')
 
 
 def player_is_human(player):
-    # Devuelve True si el argumento player coincide con la constante que guarda el nombre del jugador.
+    # Returns True if player argument matches player name.
     return player == variables.PLAYER_ID
 
     
 def get_shot_coordinates():
     '''
-    - Solicita al jugador las coordenadas de disparo sin tener en cuenta las coordinadas de los disparos previos.
-    - Asegura que el valor introducido sea tipo int para la fila (row) y para la columna (col).
-    - Asegura que el valor introducido está dentro del rango permitido. 
+    Requests shot coordinates to the player. The player can repeat coordinates from a previous shot.
+    Ensures the provided input is of type int for both row and column (col) coordinates by removing accidental blank spaces and replacing ',' with '.'.
+    Ensures the provided input is within the limits of the game board.
     '''
     coordinates = []
     for i in range(2):
-        coordinate = int(float(input(f'{'Fila' if i == 0 else 'Columna'} del disparo (1-10): '))) - 1
+        input_value = (input(f'{'Fila' if i == 0 else 'Columna'} del disparo (1-10): ')).replace(' ', '').replace(',', '.')
+        coordinate = int(float(input_value)) - 1
         if coordinate > 9:
             print('¡La coordenada introducida está fuera del tablero!')
             return get_shot_coordinates()
@@ -62,8 +62,8 @@ def get_shot_coordinates():
     return coordinates
 
 
-def generate_shot():
-    # Genera de forma aleatoria las coordenadas del disparo que realiza la máquina, asegurando que el disparo está en el tablero y no se ha disparado antes a ese punto
+def generate_shot(pc_shots):
+    # Generates random shot coordinates for the PC, ensuring said coordinates are within the limits of the game board and have not been used before.
     # FALTA ACTUALIZAR EL LISTADO DE DISPAROS REALIZADO POR LA MÁQUINA + COMPROBAR SI EL DISPARO ALEATORIO YA ESTABA HECHO
     # main.pc_shots
     shot = np.random.randint(0, 9, (2,))
