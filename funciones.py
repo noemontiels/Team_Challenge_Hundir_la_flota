@@ -40,7 +40,7 @@ def player_name():
 
 
 def player_is_human(player):
-    # Returns True if player argument matches player name.
+    # Returns True if player argument is the same as the human player's name.
     return player == variables.PLAYER_ID
 
     

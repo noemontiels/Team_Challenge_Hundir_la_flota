@@ -3,20 +3,20 @@ import variables
 import clases
 import funciones
 
-# Variables de la partida
+# Game variables
 player_lives = 20
 pc_lives = 20
 pc_shots = []
 exit_game = False
 
-# Inicio del juego
+# Game initialization
 funciones.welcome()
 variables.PLAYER_ID = funciones.player_name()
 
 if variables.PLAYER_ID == 'exit':
     exit_game = True
 
-# El juego se inicia y se ejecuta mientras el jugador no escriba 'exit' en algún imput
+# The game starts. It will end if the player writes 'exit' in any input
 while exit_game == False:
     print('Dentro de while')
     break

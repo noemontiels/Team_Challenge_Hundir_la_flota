@@ -3,7 +3,7 @@ import numpy as np
 import random
 import variables
 
-# variables: 
+# Variables: 
 board_size = variables.BOARD_SIZE
 ships = variables.SHIPS
 
