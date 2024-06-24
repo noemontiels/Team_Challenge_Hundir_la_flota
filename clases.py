@@ -17,8 +17,9 @@ class Board:
         self.board = np.full((self.size, self.size), '~')   # creates the actual board in whatever size is stores in 'size' variable (10)
         self.shots_board = np.full((self.size, self.size), '~') # creates the second board for tracking where you have fired
         self.ship_positions = []    # Stores the positions of the ships as tuples
-        self.lives = sum(self.ships.values()) # idea here is to make a way to track when all of the ships have been destroyed (not sure this will work??)
         self.generate_ships()  # calls the first method (which chain calls the others to place ships on the board)
+        
+        self.lives = sum(self.ships.values()) # idea here is to make a way to track when all of the ships have been destroyed (not sure this will work??)
 
     def generate_ships(self):
         for length in self.ships.values():  # for loop iterates over the ship lengths in the SHIPS dictionary

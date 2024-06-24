@@ -35,7 +35,7 @@ En cada turno, los jugadores se alternan para disparar al tablero del oponente. 
 ## El tablero<a name="id3"></a>
 El tablero consta de 10 columnas y 10 filas (1 - 10). Cada jugador dispondrá de 2 tableros: el suyo, donde ve los barcos; y un tablero en blanco (el del contrincante) donde irá viendo dónde ha disparado, y si ha acertado el disparo o no. Aquí tienes un ejemplo de los tableros antes de empezar el juego:
 
-                                   MI TABLERO:                                      TABLERO OPONENTE:
+                                   Tu tablero:                                      Tablero oponente:
                                     
                                 1 2 3 4 5 6 7 8 9 10                               1 2 3 4 5 6 7 8 9 10
                                ---------------------                               ---------------------
@@ -56,7 +56,7 @@ Cuando se dispara, si se impacta en un barco enemigo, se marcará con una "X" en
 
 Según vaya avanzando la partida, los tableros se irán viendo de la siguiente manera: 
 
-                                   MI TABLERO:                                      TABLERO OPONENTE:
+                                   Tu tablero:                                      Tablero oponente:
                                     
                                 1 2 3 4 5 6 7 8 9 10                               1 2 3 4 5 6 7 8 9 10
                                ---------------------                               ---------------------
