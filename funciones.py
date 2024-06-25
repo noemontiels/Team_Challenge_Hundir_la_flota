@@ -3,18 +3,13 @@ import random
 import variables
 
 '''
-- Colocar barco
-- Pedir coordenadas si jugador humano
 - Marcar tablero
 - Mostrar tablero actualizado después del disparo (los 2 tableros)
 - Determinar si se ha tocado / hundido un barco
 - Determinar turno: si ha tocado continua el mismo jugador, si no, pasa al otro
 - Fin del juego si todos los barcos de un jugador están hundidos
-- Salida del juego voluntaria
-- Verificar que coordenadas están en el tablero
 - Verifcar que pc no dispara 2 veces al mismo sitio
 - Mostrar tablero (reveal_ship): cada jugador tiene 2, uno donde tiene sus barcos colocados y otro donde dispara. Solo se muestra el tablero de los disparos
-- Vidas restantes (start = 20 porque hay 20 posiciones del tablero ocupadas por barcos al inicio de la partida)
 '''
 
 def welcome():
@@ -36,7 +31,8 @@ def welcome():
 
 def player_name():
     # Requests the player's name. If none is provided, 'human_player' is asigned as default.
-    return input('Introduzca su nombre: ')
+    name = input('Introduzca su nombre: ').strip()
+    return name if name != '' else False
 
 
 def player_is_human(player):
@@ -53,18 +49,46 @@ def get_shot_coordinates():
     coordinates = []
     for i in range(2):
         input_value = (input(f'{'Fila' if i == 0 else 'Columna'} del disparo (1-10): ')).replace(' ', '').replace(',', '.')
-        coordinate = int(float(input_value)) - 1
-        if coordinate > 9:
-            print('¡La coordenada introducida está fuera del tablero!')
-            return get_shot_coordinates()
+        if input_value == 'exit':
+            break
         else:
-            coordinates.append(coordinate)
-    return coordinates
+            coordinate = int(float(input_value)) - 1
+            if coordinate > 9:
+                print('¡La coordenada introducida está fuera del tablero!')
+                return get_shot_coordinates()
+            else:
+                coordinates.append(coordinate)
+    return tuple(coordinates)
 
 
 def generate_shot(pc_shots):
     # Generates random shot coordinates for the PC, ensuring said coordinates are within the limits of the game board and have not been used before.
-    # FALTA ACTUALIZAR EL LISTADO DE DISPAROS REALIZADO POR LA MÁQUINA + COMPROBAR SI EL DISPARO ALEATORIO YA ESTABA HECHO
-    # main.pc_shots
-    shot = np.random.randint(0, 9, (2,))
-    return shot
+
+    shot = tuple(np.random.randint(0, 9, (2,)))
+    if shot in pc_shots:
+        generate_shot(pc_shots)
+    else:
+        pc_shots.append(shot)
+    return pc_shots, shot
+
+
+def shoot(player_board, oponent_board, coordinate):
+    if oponent_board.board[coordinate] == 'S':
+        oponent_board.board[coordinate] = 'X'
+        player_board.shots_board[coordinate] = 'X'
+        successful_shot = True
+    else:
+        oponent_board.board[coordinate] = '~'
+        player_board.shots_board[coordinate] = '-'
+        successful_shot = False
+    
+    return player_board, oponent_board, successful_shot
+
+
+def print_boards_horizontally(b1, b2):
+    for row_b1, row_b2 in zip(b1, b2):
+        str_b1 = ' '.join(f'{num:2}' for num in row_b1)
+        str_b2 = ' '.join(f'{num:2}' for num in row_b2)
+    
+        print(f'{str_b1}   {str_b2}')
+    
