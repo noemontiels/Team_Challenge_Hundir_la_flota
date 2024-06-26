@@ -66,9 +66,15 @@ Según vaya avanzando la partida, los tableros se irán viendo de la siguiente m
                                     
                                 1 2 3 4 5 6 7 8 9 10                               1 2 3 4 5 6 7 8 9 10
                                ---------------------                               ---------------------
+<<<<<<< HEAD
                              1 |    0 0 0 X ~      |                             1 |        X X        |
                              2 |      ~ ~     0 0  |                             2 |                   |
                              3 |   0               |                             3 |       ~  X X X ~  |
+=======
+                             1 |    0 0 0 X -      |                             1 |        X X        |
+                             2 |      - -     0 0  |                             2 |                   |
+                             3 |   0               |                             3 |         X X X -  |
+>>>>>>> 2fb1b0f59518a3b226368151b572936ee26449a8
                              4 |         0 X       |                             4 |                   |
                              5 |                0  |                             5 |    ~              | 
                              6 |       ~ 0   X  0  |                             6 |         X         |
@@ -86,6 +92,7 @@ Según vaya avanzando la partida, los tableros se irán viendo de la siguiente m
 4. Si tu disparo ha impactado en un barco del oponente, te vuelve a tocar; si no, el turno pasa a tu contrincante.
 5. El juego continuará hasta que uno de los jugadores haya hundido todos los barcos del oponente.
 6. Puedes salir del juego escribiendo 'exit' en cualquiera de los inputs que aparecen (incluido el inicial, donde se solicita el nombre).
+
 
 ## Estructura del código<a name="id5"></a>
 - `main.py`: controla el flujo principal del juego, susceptible a futuras actualizaciones y/o correcciones.
