@@ -83,5 +83,6 @@ Según vaya avanzando la partida, los tableros se irán viendo de la siguiente m
 
 ## Estructura del código<a name="id5"></a>
 - **'main.py'**: controla el flujo principal del juego.
+- **'clases.py'**: define la clase principal 'Board', en la que se basa el desarrollo del juego
 - **'funciones.py'**: contiene funciones auxiliares necesarias para el desarrollo del juego (dar la bienvenida, pedir coordenadas, mostrar tableros, etc).
 - **'variables.py'**: define las constantes del juego.
