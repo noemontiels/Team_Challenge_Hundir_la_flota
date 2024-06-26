@@ -27,8 +27,8 @@ class Board:
         self.player_id = player_id 
         self.size = board_size  
         self.ships = ships  
-        self.board = np.full((self.size, self.size), ' ')
-        self.shots_board = np.full((self.size, self.size), ' ')
+        self.board = np.full((self.size, self.size), '·')
+        self.shots_board = np.full((self.size, self.size), '·')
         self.ship_positions = []
         self.generate_ships()
         
@@ -68,7 +68,7 @@ class Board:
     
     def place_ships(self, x, y, length, orientation):
         # Places the ship on the board and updates coordinates of the ship in the ship_positions list
-        
+      
         if orientation =='H':
             for i in range(length):
                 self.board[x, y + i] = 'S'
@@ -78,19 +78,19 @@ class Board:
                 self.board[x + i, y] = 'S'
                 self.ship_positions.append((x + i, y))
 
-    def update_board(self, updated_ships = False, updated_shots = False):
-        if updated_ships:
-            self.board = updated_ships
-        if updated_shots:
-            self.shots_board = updated_shots
+    # def update_board(self, updated_ships, updated_shots):
+    #     if updated_ships:
+    #         self.board = updated_ships
+    #     if updated_shots:
+    #         self.shots_board = updated_shots
         
 
     def print_board(self, reveal_ships = False):
         # Prints boards with or whitout ships
         
         if reveal_ships: 
-            for row in self.board:
+            for row in np.array(self.board):
                 print(" ".join(row))
         else:
-            for row in self.shots_board:
+            for row in np.array(self.shots_board):
                 print(" ".join(row))
