@@ -1,11 +1,6 @@
 # Recomendable tener una clase barco
 import numpy as np
 import random
-import variables
-
-# Variables: 
-board_size = variables.BOARD_SIZE
-ships = variables.SHIPS
 
 class Board:
     '''

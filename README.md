@@ -33,7 +33,13 @@ En cada turno, los jugadores se alternan para disparar al tablero del oponente. 
 - Tener instalado Numpy
 
 ## El tablero<a name="id3"></a>
-El tablero consta de 10 columnas y 10 filas (1 - 10). Cada jugador dispondrá de 2 tableros: el suyo, donde ve los barcos; y un tablero en blanco (el del contrincante) donde irá viendo dónde ha disparado, y si ha acertado el disparo o no. Aquí tienes un ejemplo de los tableros antes de empezar el juego:
+El tablero consta de 10 columnas y 10 filas (1 - 10).
+
+Cada jugador dispondrá de 2 tableros: 
+1. Su propio tablero, donde ve los sus barcos.
+2. Un tablero en blanco (que representa el del contrincante) donde irá viendo dónde ha disparado, y si ha acertado el disparo o no. 
+
+Este es un ejemplo de los tableros en el momento en el que se inicia el juego:
 
                                    Tu tablero:                                      Tablero oponente:
                                     
@@ -51,7 +57,7 @@ El tablero consta de 10 columnas y 10 filas (1 - 10). Cada jugador dispondrá de
                             10 |       0     0     |                            10 |                   |
                                ---------------------                               ---------------------
                                       
-Los '0' en el tablero representan los barcos.
+Las 'S' en el tablero representan los barcos.
 Cuando se dispara, si se impacta en un barco enemigo, se marcará con una "X" en el tablero. Si el disparo cae en el agua, se marcará con un guión "-".
 
 Según vaya avanzando la partida, los tableros se irán viendo de la siguiente manera: 
@@ -74,15 +80,16 @@ Según vaya avanzando la partida, los tableros se irán viendo de la siguiente m
 
 
 ## Cómo jugar<a name="id4"></a>
-1. Al iniciar el juego, se te pedirá que introduzcas tu nombre.
+1. Al iniciar el juego, se pedirá que introduzcas tu nombre. En caso de no introducir nada, se asigna un nombre por defecto.
 2. Los tableros de ambos jugadores se inicializan automáticamente con los barcos colocados aleatoriamente.
-3. En tu turno, introduce las coordenadas para disparar en el formato 'x y'.
+3. Empiezas jugando tú. En tu turno, se te pedirán las coordenadas del disparo con dos inputs; el primero para las filas y el segundo para las columnas.
 4. Si tu disparo ha impactado en un barco del oponente, te vuelve a tocar; si no, el turno pasa a tu contrincante.
 5. El juego continuará hasta que uno de los jugadores haya hundido todos los barcos del oponente.
-6. Puedes salir del juego con el comando 'exit'.
+6. Puedes salir del juego cuando quieras escribiendo 'exit' en cualquier input que aparezca.
 
 ## Estructura del código<a name="id5"></a>
-- **'main.py'**: controla el flujo principal del juego.
-- **'clases.py'**: define la clase principal 'Board', en la que se basa el desarrollo del juego
-- **'funciones.py'**: contiene funciones auxiliares necesarias para el desarrollo del juego (dar la bienvenida, pedir coordenadas, mostrar tableros, etc).
-- **'variables.py'**: define las constantes del juego.
+- `main.py`: controla el flujo principal del juego, susceptible a futuras actualizaciones y/o correcciones.
+- `clases.py`: define la clase principal 'Board', en la que se basa el desarrollo del juego.
+- `funciones.py`: contiene funciones auxiliares necesarias para el desarrollo del juego (dar la bienvenida, pedir coordenadas, mostrar tableros, etc).
+- `variables.py`: define las constantes del juego.
+- `play_here.py`: copia estable de **main.py** para jugar.
