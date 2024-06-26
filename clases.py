@@ -1,4 +1,3 @@
-# Recomendable tener una clase barco
 import numpy as np
 import random
 
@@ -28,8 +27,8 @@ class Board:
         self.player_id = player_id 
         self.size = board_size  
         self.ships = ships  
-        self.board = np.full((self.size, self.size), '~')
-        self.shots_board = np.full((self.size, self.size), '~')
+        self.board = np.full((self.size, self.size), ' ')
+        self.shots_board = np.full((self.size, self.size), ' ')
         self.ship_positions = []
         self.generate_ships()
         
@@ -55,16 +54,16 @@ class Board:
         '''
         Checks for both horizontal and vertical orientation if:
             - The length of the ship is valid and fits within the board.
-            - That all spaces within the ship's length are empty (e.g. contain '~'), aka it's not already occupied by another ship.
+            - That all spaces within the ship's length are empty (e.g. contain '·'), aka it's not already occupied by another ship.
         '''
         if orientation == 'H':
             if y + length > self.size:  
                 return False
-            return all(self.board[x, y + i] == '~' for i in range(length))  
+            return all(self.board[x, y + i] == '·' for i in range(length))  
         else:
             if x + length > self.size: 
                 return False
-            return all(self.board[x + i, y] == '~' for i in range(length))
+            return all(self.board[x + i, y] == '·' for i in range(length))
         
     
     def place_ships(self, x, y, length, orientation):

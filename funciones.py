@@ -91,4 +91,3 @@ def print_boards_horizontally(b1, b2):
         str_b2 = ' '.join(f'{num:2}' for num in row_b2)
     
         print(f'{str_b1}   {str_b2}')
-    
