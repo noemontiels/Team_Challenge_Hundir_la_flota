@@ -96,4 +96,4 @@ Según vaya avanzando la partida, los tableros se irán viendo de la siguiente m
 - `play_here.py`: copia estable de **main.py** para jugar.
 
 
-Aquí tienes una pequeña [presentacion]([https://thebridgeonline.slack.com/archives/C078D5S2A8P/p1719396547424009](https://www.canva.com/design/DAGJOZCvmkc/SV6SWVUSyNcaQkWUOC5npw/edit?utm_content=DA[…]m_campaign=designshare&utm_medium=link2&utm_source=sharebutton) del trabajo
+Aquí tienes una pequeña [presentacion]([https://thebridgeonline.slack.com/archives/C078D5S2A8P/p1719396547424009](https://www.canva.com/design/DAGJOZCvmkc/SV6SWVUSyNcaQkWUOC5npw/edit?utm_content=DA[…]m_campaign=designshare&utm_medium=link2&utm_source=sharebutton)) del trabajo
