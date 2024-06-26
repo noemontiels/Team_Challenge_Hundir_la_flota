@@ -2,8 +2,9 @@
 .ipynb_checkpoints
 __pycache__
 
-# Environment variables
+# Environment variables and git ignore
 .env
+.gitignore
 
 # Editor
 .vscode/

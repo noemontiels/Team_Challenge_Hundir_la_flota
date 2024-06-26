@@ -71,26 +71,26 @@ class Board:
       
         if orientation =='H':
             for i in range(length):
-                self.board[x, y + i] = 'S'
+                self.board[x, y + i] = 'O'
                 self.ship_positions.append((x, y, + i))
         else:
             for i in range(length):
-                self.board[x + i, y] = 'S'
+                self.board[x + i, y] = 'O'
                 self.ship_positions.append((x + i, y))
-
-    # def update_board(self, updated_ships, updated_shots):
-    #     if updated_ships:
-    #         self.board = updated_ships
-    #     if updated_shots:
-    #         self.shots_board = updated_shots
         
-
-    def print_board(self, reveal_ships = False):
-        # Prints boards with or whitout ships
+    
+    def print_board(self, oponent_board, reveal_ships = False):
+        # Prints player's board and oponent board with or whitout ships
         
         if reveal_ships: 
-            for row in np.array(self.board):
-                print(" ".join(row))
+            for row_b1, row_b2 in zip(self.board, oponent_board.board):
+                str_b1 = ' '.join(f'{num:2}' for num in row_b1)
+                str_b2 = ' '.join(f'{num:2}' for num in row_b2)
+        
+                print(f'{str_b1}{' '*10}{str_b2}')
         else:
-            for row in np.array(self.shots_board):
-                print(" ".join(row))
+            for row_b1, row_b2 in zip(self.board, self.shots_board):
+                str_b1 = ' '.join(f'{num:2}' for num in row_b1)
+                str_b2 = ' '.join(f'{num:2}' for num in row_b2)
+            
+                print(f'{str_b1}{' '*10}{str_b2}')

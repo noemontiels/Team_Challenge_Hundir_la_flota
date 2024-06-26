@@ -1,16 +1,4 @@
 import numpy as np
-import random
-import variables
-
-'''
-- Marcar tablero
-- Mostrar tablero actualizado después del disparo (los 2 tableros)
-- Determinar si se ha tocado / hundido un barco
-- Determinar turno: si ha tocado continua el mismo jugador, si no, pasa al otro
-- Fin del juego si todos los barcos de un jugador están hundidos
-- Verifcar que pc no dispara 2 veces al mismo sitio
-- Mostrar tablero (reveal_ship): cada jugador tiene 2, uno donde tiene sus barcos colocados y otro donde dispara. Solo se muestra el tablero de los disparos
-'''
 
 def welcome():
     # Prints welcome message with game instructions.
@@ -34,11 +22,6 @@ def player_name():
     name = input('Introduzca su nombre: ').strip()
     return name if name != '' else False
 
-
-def player_is_human(player):
-    # Returns True if player argument is the same as the human player's name.
-    return player == variables.PLAYER_ID
-
     
 def get_shot_coordinates():
     '''
@@ -61,33 +44,27 @@ def get_shot_coordinates():
     return tuple(coordinates)
 
 
-def generate_shot(pc_shots):
+def generate_shot(pc_shots, size):
     # Generates random shot coordinates for the PC, ensuring said coordinates are within the limits of the game board and have not been used before.
 
-    shot = tuple(np.random.randint(0, 9, (2,)))
+    shot = tuple(np.random.randint(0, size - 1, (2,)))
     if shot in pc_shots:
-        generate_shot(pc_shots)
+        generate_shot(pc_shots, size)
     else:
         pc_shots.append(shot)
     return pc_shots, shot
 
 
 def shoot(player_board, oponent_board, coordinate):
-    if oponent_board.board[coordinate] == 'S':
+    # Updates current player board and oponent board after shooting
+
+    if oponent_board.board[coordinate] == 'O':
         oponent_board.board[coordinate] = 'X'
         player_board.shots_board[coordinate] = 'X'
         successful_shot = True
     else:
         oponent_board.board[coordinate] = '~'
-        player_board.shots_board[coordinate] = '-'
+        player_board.shots_board[coordinate] = '~'
         successful_shot = False
     
     return player_board, oponent_board, successful_shot
-
-
-def print_boards_horizontally(b1, b2):
-    for row_b1, row_b2 in zip(b1, b2):
-        str_b1 = ' '.join(f'{num:2}' for num in row_b1)
-        str_b2 = ' '.join(f'{num:2}' for num in row_b2)
-    
-        print(f'{str_b1}   {str_b2}')

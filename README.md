@@ -66,15 +66,15 @@ Según vaya avanzando la partida, los tableros se irán viendo de la siguiente m
                                     
                                 1 2 3 4 5 6 7 8 9 10                               1 2 3 4 5 6 7 8 9 10
                                ---------------------                               ---------------------
-                             1 |    0 0 0 X -      |                             1 |        X X        |
-                             2 |      - -     0 0  |                             2 |                   |
-                             3 |   0               |                             3 |        - X X X -  |
+                             1 |    0 0 0 X ~      |                             1 |        X X        |
+                             2 |      ~ ~     0 0  |                             2 |                   |
+                             3 |   0               |                             3 |       ~  X X X ~  |
                              4 |         0 X       |                             4 |                   |
-                             5 |                0  |                             5 |    -              | 
-                             6 |       - 0   X  0  |                             6 |         X         |
+                             5 |                0  |                             5 |    ~              | 
+                             6 |       ~ 0   X  0  |                             6 |         X         |
                              7 |   X X       X  0  |                             7 |                   |
                              8 |             0     |                             8 |            X      |
-                             9 |- -                |                             9 |          - X      |
+                             9 |~ ~                |                             9 |          ~ X      |
                             10 |       0     0     |                            10 |                   |
                                ---------------------                               ---------------------
 
@@ -93,3 +93,6 @@ Según vaya avanzando la partida, los tableros se irán viendo de la siguiente m
 - `funciones.py`: contiene funciones auxiliares necesarias para el desarrollo del juego.
 - `variables.py`: define las constantes del juego.
 - `play_here.py`: copia estable de **main.py** para jugar.
+
+
+Aquí tienes una pequeña [presentación](https://www.canva.com/design/DAGJOZCvmkc/SV6SWVUSyNcaQkWUOC5npw/edit?utm_content=DAGJOZCvmkc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) del trabajo

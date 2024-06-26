@@ -29,23 +29,21 @@ if player_id == 'exit':
 # The game starts. It will end if the player writes 'exit' in any input
 while exit_game == False:
     if turn == 'player':
-        print('Tu tablero')
-        player_board.print_board(reveal_ships = True)
+        print('_'*100, '\n')
+        print('*** Tu turno ***', '\n')
+        print(f'Tu tablero{' '*29}Tablero oponente')
+        player_board.print_board(pc_board, reveal_ships = True)
         
-        print('Tablero oponente')
-        pc_board.print_board(reveal_ships = False)
-        
+        print('')
         coordinates = funciones.get_shot_coordinates()
         if coordinates == ():
-            # exit_game = True
             break
         
         shot_result = funciones.shoot(player_board, pc_board, coordinates)
         succesful_shot = shot_result[2]
         
         if succesful_shot == True:
-            print('¡Has tocado!')
-            print(pc_board)
+            print('\n¡Has tocado!')
             pc_lives -= 1
             if pc_lives == 0:
                 print('¡Has ganado!')
@@ -54,31 +52,34 @@ while exit_game == False:
                 time.sleep(.5)
                 continue
         else:
-            print('¡Agua!')
+            print('\n¡Agua!')
             turn = 'pc'
             time.sleep(.5)
             continue
         
     else:
-        print('Tu tablero')
-        player_board.print_board(reveal_ships = True)
-        print('Tablero oponente')
-        pc_board.print_board(reveal_ships = False)
+        print('_'*100, '\n')
+        print('*** Turno del oponente ***', '\n')
+        print(f'Tu tablero{' '*29}Tablero oponente')
+        player_board.print_board(pc_board, reveal_ships = False)
         
-        pc_shots, coordinates = funciones.generate_shot(pc_shots)
-        shot_result = funciones.shoot(player_board, pc_board, coordinates)
+        pc_shots, coordinates = funciones.generate_shot(pc_shots, variables.BOARD_SIZE)
+        shot_result = funciones.shoot(pc_board, player_board, coordinates)
         succesful_shot = shot_result[2]
-        # mensaje de si has tocado/hundido
-        # succesful_shot 
+  
         if succesful_shot == True:
+            print('\n¡Tocado!')
             player_lives -= 1
-            if player_lives == 0:
+            all_player_ships_sunk = sorted(player_board.ship_positions) == sorted(pc_shots) # Confirms all ships_positions have been shot
+            if player_lives == 0 and all_player_ships_sunk:
                 print('¡Has perdido!')
-                break # probar return
+                break
             else:
                 continue
         else:
+            print('\n¡Agua!')
             turn = 'player'
+            time.sleep(.5)
             continue
         
 
