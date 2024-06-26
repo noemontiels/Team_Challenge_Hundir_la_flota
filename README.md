@@ -68,7 +68,7 @@ Según vaya avanzando la partida, los tableros se irán viendo de la siguiente m
                                ---------------------                               ---------------------
                              1 |    0 0 0 X -      |                             1 |        X X        |
                              2 |      - -     0 0  |                             2 |                   |
-                             3 |   0               |                             3 |        - X X X -  |
+                             3 |   0               |                             3 |         X X X -  |
                              4 |         0 X       |                             4 |                   |
                              5 |                0  |                             5 |    -              | 
                              6 |       - 0   X  0  |                             6 |         X         |
