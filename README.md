@@ -87,9 +87,13 @@ Según vaya avanzando la partida, los tableros se irán viendo de la siguiente m
 5. El juego continuará hasta que uno de los jugadores haya hundido todos los barcos del oponente.
 6. Puedes salir del juego escribiendo 'exit' en cualquiera de los inputs que aparecen (incluido el inicial, donde se solicita el nombre).
 
+
 ## Estructura del código<a name="id5"></a>
 - `main.py`: controla el flujo principal del juego, susceptible a futuras actualizaciones y/o correcciones.
 - `clases.py`: define la clase principal 'Board', en la que se basa el desarrollo del juego.
 - `funciones.py`: contiene funciones auxiliares necesarias para el desarrollo del juego.
 - `variables.py`: define las constantes del juego.
 - `play_here.py`: copia estable de **main.py** para jugar.
+
+
+Aquí tienes una pequeña [presentacion](https://thebridgeonline.slack.com/archives/C078D5S2A8P/p1719396547424009) del trabajo
