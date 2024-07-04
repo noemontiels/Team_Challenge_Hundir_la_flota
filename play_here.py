@@ -32,7 +32,7 @@ while exit_game == False:
         print('_'*100, '\n')
         print('*** Tu turno ***', '\n')
         print(f'Tu tablero{' '*29}Tablero oponente')
-        player_board.print_board(pc_board, reveal_ships = True)
+        player_board.print_board(pc_board, reveal_ships = False)
         
         print('')
         coordinates = funciones.get_shot_coordinates()
